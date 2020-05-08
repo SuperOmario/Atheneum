@@ -1,0 +1,62 @@
+{ "database" : {
+    "name" : "Clinic",
+    "entities" : [
+            { 
+            "name" :  "Customer",
+            "attributes" : [
+                    { 
+                    "name" : "CID",
+                    "datatype" : "int",
+                    "length" : 4,
+                    "nullable" : false},
+                    {
+                    "name" : "FName",
+                    "datatype" : "varchar2",
+                    "length" : 15,
+                    "nullable" : true},
+                    {
+                    "name" : "SName",
+                    "datatype" : "varchar2",
+                    "length" : 15,
+                    "nullable" : true},
+                    {
+                    "name" : "DOB",
+                    "datatype" : "date",
+                    "lenght" : null,
+                    "nullable" : true},
+                    {
+                    "name" : "Address",
+                    "datatype" : "varchar2",
+                    "length" : 30,
+                    "nullable" : true},
+                    {
+                    "name" : "City",
+                    "datatype" : "varchar2",
+                    "length" : 15,
+                    "nullable" : true},
+                    {
+                    "name" : "County",
+                    "datatype" : "varchar2",
+                    "length" : 15,
+                    "nullable" : ""},
+                    {
+                    "name" : "Email",
+                    "datatype" : "varchar2",
+                    "length" : 30,
+                    "nullable" : true},
+                    {
+                    "name" : "Mobile",
+                    "datatype" : "varchar2",
+                    "length" : 20,
+                    "nullable" : true},
+                     {
+                    "name" : "Notes",
+                    "datatype" : "varchar2",
+                    "length" : 50,
+                    "nullable" : true
+                    }
+                ]
+            }
+        ]
+    }
+}

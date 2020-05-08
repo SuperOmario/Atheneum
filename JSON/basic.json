@@ -1,0 +1,34 @@
+{
+    "name" : "Clinic",
+    "entities" : [
+        {
+            "name" : "Customer",
+            "attributes" : [
+                { 
+                    "name" : "CID",
+                    "datatype" : "int",
+                    "length" : 4,
+                    "nullable" : false
+                },
+                {
+                    "name" : "FName",
+                    "datatype" : "varchar2",
+                    "length" : 15,
+                    "nullable" : true
+                },
+                {
+                    "name" : "SName",
+                    "datatype" : "varchar2",
+                    "length" : 15,
+                    "nullable" : true
+                },
+                {
+                    "name" : "DOB",
+                    "datatype" : "date",
+                    "lenght" : null,
+                    "nullable" : true
+                }
+            ]
+        }
+    ]
+}
