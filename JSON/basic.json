@@ -2,30 +2,34 @@
     "name" : "Clinic",
     "entities" : [
         {
-            "name" : "Customer",
+            "name" : "Client",
             "attributes" : [
                 { 
                     "name" : "CID",
-                    "datatype" : "int",
+                    "datatype" : "NUMBER",
                     "length" : 4,
+                    "replace" : "0",
                     "nullable" : false
                 },
                 {
                     "name" : "FName",
-                    "datatype" : "varchar2",
+                    "datatype" : "VARCHAR2",
                     "length" : 15,
+                    "replace" : "",
                     "nullable" : true
                 },
                 {
-                    "name" : "SName",
-                    "datatype" : "varchar2",
+                    "name" : "LName",
+                    "datatype" : "VARCHAR2",
                     "length" : 15,
+                    "replace" : "",
                     "nullable" : true
                 },
                 {
                     "name" : "DOB",
-                    "datatype" : "date",
-                    "lenght" : null,
+                    "datatype" : "DATE",
+                    "length" : null,
+                    "replace" : "",
                     "nullable" : true
                 }
             ]

@@ -2,6 +2,7 @@ package parser
 
 import (
 	"atheneum/structure"
+	"fmt"
 	"reflect"
 	"testing"
 )
@@ -11,30 +12,34 @@ func TestOpen(t *testing.T) {
 
 	expectedDatabase := structure.Database{Name: "Clinic", Entities: []structure.Entity{
 		{
-			Name: "Customer",
+			Name: "Client",
 			Attributes: []structure.Attribute{
 				{
 					Name:     "CID",
-					Datatype: "int",
+					Datatype: "NUMBER",
 					Length:   4,
+					Replace:  "0",
 					Nullable: false,
 				},
 				{
 					Name:     "FName",
-					Datatype: "varchar2",
+					Datatype: "VARCHAR2",
 					Length:   15,
+					Replace:  "",
 					Nullable: true,
 				},
 				{
-					Name:     "SName",
-					Datatype: "varchar2",
+					Name:     "LName",
+					Datatype: "VARCHAR2",
 					Length:   15,
+					Replace:  "",
 					Nullable: true,
 				},
 				{
 					Name:     "DOB",
-					Datatype: "date",
+					Datatype: "DATE",
 					Length:   0,
+					Replace:  "",
 					Nullable: true,
 				},
 			},
@@ -43,6 +48,7 @@ func TestOpen(t *testing.T) {
 	}
 
 	if !reflect.DeepEqual(database, expectedDatabase) {
+		fmt.Println(expectedDatabase)
 		t.Errorf("Database is not equal to expectedDatabase")
 	}
 }
