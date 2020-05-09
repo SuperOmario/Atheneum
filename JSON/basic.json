@@ -31,6 +31,102 @@
                     "length" : null,
                     "replace" : "",
                     "nullable" : true
+                },
+                {
+                    "name" : "Address",
+                    "datatype" : "VARCHAR2",
+                    "length" : 30,
+                    "replace": "",
+                    "nullable" : true
+                },
+                {
+                    "name" : "City",
+                    "datatype" : "VARCHAR2",
+                    "length" : 15,
+                    "replace": "",
+                    "nullable" : true
+                },
+                {
+                    "name" : "County",
+                    "datatype" : "VARCHAR2",
+                    "length" : 15,
+                    "replace": "",
+                    "nullable" : true
+                },
+                {
+                    "name" : "Email",
+                    "datatype" : "VARCHAR2",
+                    "length" : 30,
+                    "replace": "",
+                    "nullable" : true
+                },
+                {
+                    "name" : "Mobile",
+                    "datatype" : "VARCHAR2",
+                    "length" : 20,
+                    "replace": "",
+                    "nullable" : true
+                },
+                {
+                    "name" : "Notes",
+                    "datatype" : "VARCHAR2",
+                    "length" : 50,
+                    "replace": "",
+                    "nullable" : true
+                }
+            ]
+        },
+        {
+            "name" : "Physio",
+            "attributes" : [
+                {
+                    "name" : "PHYID",
+                    "datatype": "NUMBER",
+                    "length" : 2,
+                    "replace" : "0",
+                    "nullable" : false
+                },
+                {
+                    "name" : "FName",
+                    "datatype": "VARCHAR2",
+                    "length" : 15,
+                    "replace" : "",
+                    "nullable" : true
+                },
+                {
+                    "name" : "LName",
+                    "datatype": "VARCHAR2",
+                    "length" : 15,
+                    "replace" : "",
+                    "nullable" : true
+                },
+                {
+                    "name" : "HireDate",
+                    "datatype": "DATE",
+                    "length" : 0,
+                    "replace" : "",
+                    "nullable" : true
+                },
+                {
+                    "name" : "Qual",
+                    "datatype": "VARCHAR2",
+                    "length" : 30,
+                    "replace" : "",
+                    "nullable" : true
+                },
+                {
+                    "name" : "Salary",
+                    "datatype": "NUMBER",
+                    "length" : 9,
+                    "replace" : "2",
+                    "nullable" : true
+                },
+                {
+                    "name" : "PhyRole",
+                    "datatype": "VARCHAR2",
+                    "length" : 15,
+                    "replace" : "",
+                    "nullable" : true
                 }
             ]
         }
