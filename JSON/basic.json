@@ -8,70 +8,70 @@
                     "name" : "CID",
                     "datatype" : "NUMBER",
                     "length" : 4,
-                    "replace" : "0",
+                    "scale" : 0,
                     "nullable" : false
                 },
                 {
                     "name" : "FName",
                     "datatype" : "VARCHAR2",
                     "length" : 15,
-                    "replace" : "",
+                    "scale" : 0,
                     "nullable" : true
                 },
                 {
                     "name" : "LName",
                     "datatype" : "VARCHAR2",
                     "length" : 15,
-                    "replace" : "",
+                    "scale" : 0,
                     "nullable" : true
                 },
                 {
                     "name" : "DOB",
                     "datatype" : "DATE",
                     "length" : null,
-                    "replace" : "",
+                    "scale" : 0,
                     "nullable" : true
                 },
                 {
                     "name" : "Address",
                     "datatype" : "VARCHAR2",
                     "length" : 30,
-                    "replace": "",
+                    "scale": 0,
                     "nullable" : true
                 },
                 {
                     "name" : "City",
                     "datatype" : "VARCHAR2",
                     "length" : 15,
-                    "replace": "",
+                    "scale": 0,
                     "nullable" : true
                 },
                 {
                     "name" : "County",
                     "datatype" : "VARCHAR2",
                     "length" : 15,
-                    "replace": "",
+                    "scale": 0,
                     "nullable" : true
                 },
                 {
                     "name" : "Email",
                     "datatype" : "VARCHAR2",
                     "length" : 30,
-                    "replace": "",
+                    "scale": 0,
                     "nullable" : true
                 },
                 {
                     "name" : "Mobile",
                     "datatype" : "VARCHAR2",
                     "length" : 20,
-                    "replace": "",
+                    "scale": 0,
                     "nullable" : true
                 },
                 {
                     "name" : "Notes",
                     "datatype" : "VARCHAR2",
                     "length" : 50,
-                    "replace": "",
+                    "scale": 0,
                     "nullable" : true
                 }
             ]
@@ -83,49 +83,49 @@
                     "name" : "PHYID",
                     "datatype": "NUMBER",
                     "length" : 2,
-                    "replace" : "0",
+                    "scale" : 0,
                     "nullable" : false
                 },
                 {
                     "name" : "FName",
                     "datatype": "VARCHAR2",
                     "length" : 15,
-                    "replace" : "",
+                    "scale" : 0,
                     "nullable" : true
                 },
                 {
                     "name" : "LName",
                     "datatype": "VARCHAR2",
                     "length" : 15,
-                    "replace" : "",
+                    "scale" : 0,
                     "nullable" : true
                 },
                 {
                     "name" : "HireDate",
                     "datatype": "DATE",
                     "length" : 0,
-                    "replace" : "",
+                    "scale" : 0,
                     "nullable" : true
                 },
                 {
                     "name" : "Qual",
                     "datatype": "VARCHAR2",
                     "length" : 30,
-                    "replace" : "",
+                    "scale" : 0,
                     "nullable" : true
                 },
                 {
                     "name" : "Salary",
                     "datatype": "NUMBER",
                     "length" : 9,
-                    "replace" : "2",
+                    "scale" : 2,
                     "nullable" : true
                 },
                 {
                     "name" : "PhyRole",
                     "datatype": "VARCHAR2",
                     "length" : 15,
-                    "replace" : "",
+                    "scale" : 0,
                     "nullable" : true
                 }
             ]

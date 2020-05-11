@@ -14,6 +14,6 @@ type Attribute struct {
 	Name     string `json : "name"`
 	Datatype string `json : "datatype"`
 	Length   int    `json : "length"`
-	Replace  string `json : "replace`
+	Scale    int    `json : "scale`
 	Nullable bool   `json : "nullable"`
 }

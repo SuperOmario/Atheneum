@@ -16,16 +16,8 @@ func GenCreateStatements(database structure.Database) {
 		fmt.Println("Succesfully Created File: " + file.Name())
 	}
 
-	l, err := file.WriteString("CREATE DATABASE " + database.Name + "\n")
-	if err != nil {
-		fmt.Println(err)
-		file.Close()
-	}
-
-	fmt.Println(l, "Bytes written successfully")
-
 	for i := 0; i < len(database.Entities); i++ {
-		l, err := file.WriteString("\nCREATE TABLE " + database.Entities[i].Name + " (\n")
+		l, err := file.WriteString("CREATE TABLE " + database.Entities[i].Name + " (\n")
 		if err != nil {
 			fmt.Println(err)
 			file.Close()
@@ -34,12 +26,16 @@ func GenCreateStatements(database structure.Database) {
 		var Attributes = database.Entities[i].Attributes
 		for j := 0; j < len(Attributes); j++ {
 			file.WriteString(`"` + Attributes[j].Name + `" `)
-			file.WriteString(Attributes[j].Datatype)
-			if Attributes[j].Datatype != "DATE" {
+			if isNumber(Attributes[j]) {
+				file.WriteString("NUMBER")
+			} else {
+				file.WriteString(Attributes[j].Datatype)
+			}
+			if !isDate(Attributes[j]) {
 				file.WriteString("(" + strconv.Itoa(Attributes[j].Length))
-				if Attributes[j].Replace != "" {
-					file.WriteString("," + Attributes[j].Replace + ")")
-				} else if Attributes[j].Datatype != "DATE" {
+				if isNumber(Attributes[j]) {
+					file.WriteString("," + strconv.Itoa(Attributes[j].Scale) + ")")
+				} else if !isDate(Attributes[j]) {
 					file.WriteString(")")
 				}
 				if Attributes[j].Nullable == false {
@@ -47,12 +43,93 @@ func GenCreateStatements(database structure.Database) {
 				}
 			}
 			if j == len(Attributes)-1 {
-				fmt.Println(j)
 				file.WriteString("\n)\n\n")
 			} else {
-				fmt.Println("comma new line")
 				file.WriteString("," + "\n")
 			}
 		}
+	}
+}
+
+func isSupportedDatatType(attribute structure.Attribute) bool {
+	if isBinaryType(attribute) || isCharType(attribute) || isDate(attribute) || isNumber(attribute) {
+		return true
+	}
+	return false
+}
+
+//determines if the datatype is a SUPPORTED character data type
+func isCharType(attribute structure.Attribute) bool {
+	switch attribute.Datatype {
+	case "CHAR":
+		return true
+	case "VARCHAR":
+		return true
+	case "NCHAR":
+		return true
+	case "NVARCHAR":
+		return true
+	case "CLOB":
+		return true
+	case "NCLOP":
+		return true
+	case "LONG":
+		return true
+	default:
+		return false
+	}
+}
+
+//determines if datatype is numeric
+func isNumber(attribute structure.Attribute) bool {
+	switch attribute.Datatype {
+	case "BIT":
+		return true
+	case "TINYINT":
+		return true
+	case "SMALLINT":
+		return true
+	case "INT":
+		return true
+	case "BIGINT":
+		return true
+	case "DECIMAL":
+		return true
+	case "NUMERIC":
+		return true
+	case "FLOAT":
+		return true
+	case "REAL":
+		return true
+	case "NUMBER":
+		return true
+	default:
+		return false
+	}
+}
+
+//determines if datatype is Date (oracle does not support other Date and Time data types)
+func isDate(attribute structure.Attribute) bool {
+	switch attribute.Datatype {
+	case "DATE":
+		return true
+	default:
+		return false
+	}
+}
+
+//determines if datatype is a SUPPORTED binary data type
+func isBinaryType(attribute structure.Attribute) bool {
+	switch attribute.Datatype {
+	case "BLOB":
+		return true
+	case "BFILE":
+		return true
+	case "RAW":
+		return true
+	case "LONG RAW":
+		return true
+	default:
+		return false
 	}
 }
