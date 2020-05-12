@@ -16,4 +16,5 @@ type Attribute struct {
 	Length   int    `json : "length"`
 	Scale    int    `json : "scale`
 	Nullable bool   `json : "nullable"`
+	PK       bool   `json : "PK"`
 }

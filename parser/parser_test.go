@@ -20,6 +20,7 @@ func TestOpen(t *testing.T) {
 					Length:   4,
 					Scale:    0,
 					Nullable: false,
+					PK:       true,
 				},
 				{
 					Name:     "FName",
@@ -27,6 +28,7 @@ func TestOpen(t *testing.T) {
 					Length:   15,
 					Scale:    0,
 					Nullable: true,
+					PK:       false,
 				},
 				{
 					Name:     "LName",
@@ -34,6 +36,7 @@ func TestOpen(t *testing.T) {
 					Length:   15,
 					Scale:    0,
 					Nullable: true,
+					PK:       false,
 				},
 				{
 					Name:     "DOB",
@@ -41,6 +44,7 @@ func TestOpen(t *testing.T) {
 					Length:   0,
 					Scale:    0,
 					Nullable: true,
+					PK:       false,
 				},
 				{
 					Name:     "Address",
@@ -48,6 +52,7 @@ func TestOpen(t *testing.T) {
 					Length:   30,
 					Scale:    0,
 					Nullable: true,
+					PK:       false,
 				},
 				{
 					Name:     "City",
@@ -55,6 +60,7 @@ func TestOpen(t *testing.T) {
 					Length:   15,
 					Scale:    0,
 					Nullable: true,
+					PK:       false,
 				},
 				{
 					Name:     "County",
@@ -62,6 +68,7 @@ func TestOpen(t *testing.T) {
 					Length:   15,
 					Scale:    0,
 					Nullable: true,
+					PK:       false,
 				},
 				{
 					Name:     "Email",
@@ -69,6 +76,7 @@ func TestOpen(t *testing.T) {
 					Length:   30,
 					Scale:    0,
 					Nullable: true,
+					PK:       false,
 				},
 				{
 					Name:     "Mobile",
@@ -76,6 +84,7 @@ func TestOpen(t *testing.T) {
 					Length:   20,
 					Scale:    0,
 					Nullable: true,
+					PK:       false,
 				},
 				{
 					Name:     "Notes",
@@ -83,6 +92,7 @@ func TestOpen(t *testing.T) {
 					Length:   50,
 					Scale:    0,
 					Nullable: true,
+					PK:       false,
 				},
 			},
 		},
@@ -95,6 +105,7 @@ func TestOpen(t *testing.T) {
 					Length:   2,
 					Scale:    0,
 					Nullable: false,
+					PK:       true,
 				},
 				{
 					Name:     "FName",
@@ -102,6 +113,7 @@ func TestOpen(t *testing.T) {
 					Length:   15,
 					Scale:    0,
 					Nullable: true,
+					PK:       false,
 				},
 				{
 					Name:     "LName",
@@ -109,6 +121,7 @@ func TestOpen(t *testing.T) {
 					Length:   15,
 					Scale:    0,
 					Nullable: true,
+					PK:       false,
 				},
 				{
 					Name:     "HireDate",
@@ -116,6 +129,7 @@ func TestOpen(t *testing.T) {
 					Length:   0,
 					Scale:    0,
 					Nullable: true,
+					PK:       false,
 				},
 				{
 					Name:     "Qual",
@@ -123,6 +137,7 @@ func TestOpen(t *testing.T) {
 					Length:   30,
 					Scale:    0,
 					Nullable: true,
+					PK:       false,
 				},
 				{
 					Name:     "Salary",
@@ -130,6 +145,7 @@ func TestOpen(t *testing.T) {
 					Length:   9,
 					Scale:    2,
 					Nullable: true,
+					PK:       false,
 				},
 				{
 					Name:     "PhyRole",
@@ -137,6 +153,7 @@ func TestOpen(t *testing.T) {
 					Length:   15,
 					Scale:    0,
 					Nullable: true,
+					PK:       false,
 				},
 			},
 		},

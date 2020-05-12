@@ -9,70 +9,80 @@
                     "datatype" : "NUMBER",
                     "length" : 4,
                     "scale" : 0,
-                    "nullable" : false
+                    "nullable" : false,
+                    "PK" : true
                 },
                 {
                     "name" : "FName",
                     "datatype" : "VARCHAR2",
                     "length" : 15,
                     "scale" : 0,
-                    "nullable" : true
+                    "nullable" : true,
+                    "PK" : false
                 },
                 {
                     "name" : "LName",
                     "datatype" : "VARCHAR2",
                     "length" : 15,
                     "scale" : 0,
-                    "nullable" : true
+                    "nullable" : true,
+                    "PK" : false
                 },
                 {
                     "name" : "DOB",
                     "datatype" : "DATE",
                     "length" : null,
                     "scale" : 0,
-                    "nullable" : true
+                    "nullable" : true,
+                    "PK" : false
                 },
                 {
                     "name" : "Address",
                     "datatype" : "VARCHAR2",
                     "length" : 30,
                     "scale": 0,
-                    "nullable" : true
+                    "nullable" : true,
+                    "PK" : false
                 },
                 {
                     "name" : "City",
                     "datatype" : "VARCHAR2",
                     "length" : 15,
                     "scale": 0,
-                    "nullable" : true
+                    "nullable" : true,
+                    "PK" : false
                 },
                 {
                     "name" : "County",
                     "datatype" : "VARCHAR2",
                     "length" : 15,
                     "scale": 0,
-                    "nullable" : true
+                    "nullable" : true,
+                    "PK" : false
                 },
                 {
                     "name" : "Email",
                     "datatype" : "VARCHAR2",
                     "length" : 30,
                     "scale": 0,
-                    "nullable" : true
+                    "nullable" : true,
+                    "PK" : false
                 },
                 {
                     "name" : "Mobile",
                     "datatype" : "VARCHAR2",
                     "length" : 20,
                     "scale": 0,
-                    "nullable" : true
+                    "nullable" : true,
+                    "PK" : false
                 },
                 {
                     "name" : "Notes",
                     "datatype" : "VARCHAR2",
                     "length" : 50,
                     "scale": 0,
-                    "nullable" : true
+                    "nullable" : true,
+                    "PK" : false
                 }
             ]
         },
@@ -84,49 +94,56 @@
                     "datatype": "NUMBER",
                     "length" : 2,
                     "scale" : 0,
-                    "nullable" : false
+                    "nullable" : false,
+                    "PK" : true
                 },
                 {
                     "name" : "FName",
                     "datatype": "VARCHAR2",
                     "length" : 15,
                     "scale" : 0,
-                    "nullable" : true
+                    "nullable" : true,
+                    "PK" : false
                 },
                 {
                     "name" : "LName",
                     "datatype": "VARCHAR2",
                     "length" : 15,
                     "scale" : 0,
-                    "nullable" : true
+                    "nullable" : true,
+                    "PK" : false
                 },
                 {
                     "name" : "HireDate",
                     "datatype": "DATE",
                     "length" : 0,
                     "scale" : 0,
-                    "nullable" : true
+                    "nullable" : true,
+                    "PK" : false
                 },
                 {
                     "name" : "Qual",
                     "datatype": "VARCHAR2",
                     "length" : 30,
                     "scale" : 0,
-                    "nullable" : true
+                    "nullable" : true,
+                    "PK" : false
                 },
                 {
                     "name" : "Salary",
                     "datatype": "NUMBER",
                     "length" : 9,
                     "scale" : 2,
-                    "nullable" : true
+                    "nullable" : true,
+                    "PK" : false
                 },
                 {
                     "name" : "PhyRole",
                     "datatype": "VARCHAR2",
                     "length" : 15,
                     "scale" : 0,
-                    "nullable" : true
+                    "nullable" : true,
+                    "PK" : false
                 }
             ]
         }

@@ -8,7 +8,8 @@ CREATE TABLE Client (
 "County" VARCHAR2(15),
 "Email" VARCHAR2(30),
 "Mobile" VARCHAR2(20),
-"Notes" VARCHAR2(50)
+"Notes" VARCHAR2(50),
+PRIMARY KEY (CID)
 )
 
 CREATE TABLE Physio (
@@ -18,6 +19,7 @@ CREATE TABLE Physio (
 "HireDate" DATE,
 "Qual" VARCHAR2(30),
 "Salary" NUMBER(9,2),
-"PhyRole" VARCHAR2(15)
+"PhyRole" VARCHAR2(15),
+PRIMARY KEY (PHYID)
 )
 

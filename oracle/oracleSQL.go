@@ -43,14 +43,27 @@ func GenCreateStatements(database structure.Database) {
 				}
 			}
 			if j == len(Attributes)-1 {
+				file.WriteString(",\nPRIMARY KEY (" + getPrimaryKey(database.Entities[i]).Name + ")")
 				file.WriteString("\n)\n\n")
 			} else {
 				file.WriteString("," + "\n")
 			}
 		}
 	}
+	file.Close()
 }
 
+//Returns the Primary Key Attribute (will default to the first attribute in the entity if no Primary Key is found)
+func getPrimaryKey(entity structure.Entity) structure.Attribute {
+	for i := 0; i < len(entity.Attributes); i++ {
+		if entity.Attributes[i].PK == true {
+			return entity.Attributes[i]
+		}
+	}
+	return entity.Attributes[0]
+}
+
+//checks if the data type is supported by Oracle
 func isSupportedDatatType(attribute structure.Attribute) bool {
 	if isBinaryType(attribute) || isCharType(attribute) || isDate(attribute) || isNumber(attribute) {
 		return true
