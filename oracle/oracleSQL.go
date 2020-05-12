@@ -44,6 +44,12 @@ func GenCreateStatements(database structure.Database) {
 			}
 			if j == len(Attributes)-1 {
 				file.WriteString(",\nPRIMARY KEY (" + getPrimaryKey(database.Entities[i]).Name + ")")
+				if hasForeignKeys(database.Entities[i]) {
+					for k := 0; k < len(database.Entities[i].ForeignKeys); k++ {
+						file.WriteString(",\nFOREIGN KEY (" + database.Entities[i].ForeignKeys[k].Name + ") REFERENCES ")
+						file.WriteString(database.Entities[i].ForeignKeys[k].Reference + "(" + database.Entities[i].ForeignKeys[k].Name + ")")
+					}
+				}
 				file.WriteString("\n)\n\n")
 			} else {
 				file.WriteString("," + "\n")
@@ -61,6 +67,14 @@ func getPrimaryKey(entity structure.Entity) structure.Attribute {
 		}
 	}
 	return entity.Attributes[0]
+}
+
+//Determines if the entity contains foreign key attributes
+func hasForeignKeys(entity structure.Entity) bool {
+	if len(entity.ForeignKeys) > 0 {
+		return true
+	}
+	return false
 }
 
 //checks if the data type is supported by Oracle

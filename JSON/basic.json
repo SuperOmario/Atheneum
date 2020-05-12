@@ -146,6 +146,150 @@
                     "PK" : false
                 }
             ]
+        },
+        {
+            "name" : "TestTreatment",
+            "attributes" : [
+                {
+                    "name" : "TID",
+                    "datatype" : "NUMBER",
+                    "length" : 2,
+                    "scale" : 0,
+                    "nullable" : false,
+                    "PK" : true
+                },
+                {
+                    "name" : "TName",
+                    "datatype" : "VARCHAR2",
+                    "length" : 20,
+                    "scale" : 0,
+                    "nullable" : true,
+                    "PK" : false
+                },
+                {
+                    "name" : "TDesc",
+                    "datatype" : "VARCHAR2",
+                    "length" : 35,
+                    "scale" : 0,
+                    "nullable" : true,
+                    "PK" : false
+                },
+                {
+                    "name" : "Fee",
+                    "datatype" : "NUMBER",
+                    "length" : 9,
+                    "scale" : 2,
+                    "nullable" : true,
+                    "PK" : false
+                },
+                {
+                    "name" : "Duration",
+                    "datatype" : "NUMBER",
+                    "length" : 2,
+                    "scale" : 0,
+                    "nullable" : true,
+                    "PK" : false
+                }
+            ]
+        },
+        {
+            "name" : "TestAppointment",
+            "attributes" : [
+                {
+                    "name" : "APPID",
+                    "datatype" : "NUMBER",
+                    "length" : 5,
+                    "scale" : 0,
+                    "nullable" : false,
+                    "PK" : true
+                },
+                {
+                    "name" : "CID",
+                    "datatype" : "NUMBER",
+                    "length" : 4,
+                    "scale" : 0,
+                    "nullable" : true,
+                    "PK" : false
+                },
+                {
+                    "name" : "PHYID",
+                    "datatype" : "NUMBER",
+                    "length" : 2,
+                    "scale" : 0,
+                    "nullable" : true,
+                    "PK" : false
+                },
+                {
+                    "name" : "TID",
+                    "datatype" : "NUMBER",
+                    "length" : 2,
+                    "scale" : 0,
+                    "nullable" : true,
+                    "PK" : false
+                },
+                {
+                    "name" : "AppDate",
+                    "datatype" : "DATE",
+                    "length" : 0,
+                    "scale" : 0,
+                    "nullable" : true,
+                    "PK" : false
+                },
+                {
+                    "name" : "Paid",
+                    "datatype" : "VARCHAR2",
+                    "length" : 1,
+                    "scale" : 0,
+                    "nullable" : true,
+                    "PK" : false
+                },
+                {
+                    "name" : "PayMethod",
+                    "datatype" : "VARCHAR2",
+                    "length" : 15,
+                    "scale" : 0,
+                    "nullable" : true,
+                    "PK" : false
+                },
+                {
+                    "name" : "AppTime",
+                    "datatype" : "VARCHAR2",
+                    "length" : 15,
+                    "scale" : 0,
+                    "nullable" : true,
+                    "PK" : false
+                },
+                {
+                    "name" : "Discount",
+                    "datatype" : "NUMBER",
+                    "length" : 2,
+                    "scale" : 0,
+                    "nullable" : true,
+                    "PK" : false
+                },
+                {
+                    "name" : "Notes",
+                    "datatype" : "VARCHAR2",
+                    "length" : 50,
+                    "scale" : 0,
+                    "nullable" : true,
+                    "PK" : false
+                }
+            ],
+            "foreignkeys" : [
+                {
+                    "name" : "CID",
+                    "reference" : "Client"
+                },
+                {
+                    "name" : "PHYID",
+                    "reference" : "Physio"
+                },
+                {
+                    "name" : "TID",
+                    "reference" : "TestTreatment"
+                }
+            ]
         }
     ]
 }
