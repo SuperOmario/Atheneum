@@ -43,7 +43,19 @@ func GenCreateStatements(database structure.Database) {
 				}
 			}
 			if j == len(Attributes)-1 {
-				file.WriteString(",\nPRIMARY KEY (" + getPrimaryKey(database.Entities[i]).Name + ")")
+				comp := getPrimaryKey(database.Entities[i])
+				if len(comp) == 1 {
+					file.WriteString(",\nPRIMARY KEY (" + comp[0].Name + ")")
+				} else if len(comp) > 1 {
+					file.WriteString(",\nPRIMARY KEY (")
+					for k := 0; k < len(comp); k++ {
+						file.WriteString(comp[k].Name)
+						if k == len(comp)-1 {
+							file.WriteString(", ")
+						}
+					}
+					file.WriteString(")")
+				}
 				if hasForeignKeys(database.Entities[i]) {
 					for k := 0; k < len(database.Entities[i].ForeignKeys); k++ {
 						file.WriteString(",\nFOREIGN KEY (" + database.Entities[i].ForeignKeys[k].Name + ") REFERENCES ")
@@ -60,13 +72,14 @@ func GenCreateStatements(database structure.Database) {
 }
 
 //Returns the Primary Key Attribute (will default to the first attribute in the entity if no Primary Key is found)
-func getPrimaryKey(entity structure.Entity) structure.Attribute {
+func getPrimaryKey(entity structure.Entity) []structure.Attribute {
+	var comp []structure.Attribute
 	for i := 0; i < len(entity.Attributes); i++ {
 		if entity.Attributes[i].PK == true {
-			return entity.Attributes[i]
+			comp = append(comp, entity.Attributes[i])
 		}
 	}
-	return entity.Attributes[0]
+	return comp
 }
 
 //Determines if the entity contains foreign key attributes

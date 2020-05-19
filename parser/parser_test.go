@@ -206,7 +206,7 @@ func TestOpen(t *testing.T) {
 			Name: "TestAppointment",
 			Attributes: []structure.Attribute{
 				{
-					Name:     "AppID",
+					Name:     "APPID",
 					Datatype: "NUMBER",
 					Length:   5,
 					Scale:    0,
